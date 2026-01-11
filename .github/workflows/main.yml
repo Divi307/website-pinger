@@ -5,17 +5,17 @@ on:
     branches: [ "main" ]
   schedule:
     - cron: "*/5 * * * *"  # every 5 minutes
-  workflow_dispatch:
+  workflow_dispatch:  # allows manual trigger
 
 permissions:
-  contents: read  # no need to write logs now
+  contents: read  # no need to write logs
 
 jobs:
   ping:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Python
